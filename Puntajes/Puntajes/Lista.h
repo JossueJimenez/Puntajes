@@ -12,5 +12,7 @@ public:
 	void leer();
 	void guardar();
 	string toString();
+	bool isWord(string);
+	int puntaje(string);
 };
 
