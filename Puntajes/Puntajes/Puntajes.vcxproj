@@ -115,9 +115,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Lista.h" />
+    <ClInclude Include="Nodo.h" />
     <ClInclude Include="Usuario.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Lista.cpp" />
+    <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
