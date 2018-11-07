@@ -77,15 +77,29 @@ int Lista::puntaje(string p)
 		{
 		case 'A': {} break;
 		case 'B': {}break;
-		case 'C': {}break;
+		case 'C': {
+			valor += 3;
+			if (p[i + 1] == 'H')
+			{
+				valor += 2;
+				i++;
+			}
+		} break;
 		case 'D': {}break;
 		case 'E': {}break;
 		case 'F': {}break;
 		case 'G': {}break;
-		case 'H': {}break; 
+		case 'H': {}break;
 		case 'I': {}break;
 		case 'J': {}break;
-		case 'L': {}break;
+		case 'L': {
+			valor += 6;
+			if (p[i + 1] == 'L')
+			{
+				valor += 2;
+				i++;
+			}
+		}break;
 		case 'K': {}break;
 		case 'M': {}break;
 		case 'N': {}break;
@@ -93,7 +107,14 @@ int Lista::puntaje(string p)
 		case 'O': {}break;
 		case 'P': {}break;
 		case 'Q': {}break;
-		case 'R': {}break;
+		case 'R': {
+			valor += 1;
+			if (p[i + 1] == 'R')
+			{
+				valor += 7;
+				i++;
+			}
+		}break;
 		case 'S': {}break;
 		case 'T': {}break;
 		case 'U': {} break;
@@ -102,18 +123,55 @@ int Lista::puntaje(string p)
 		case 'X': {}break;
 		case 'Y': {}break;
 		case 'Z': {}break;
-		default: { 
-			if (p[i + 1] == 'L')
+		case 'a': {} break;
+		case 'b': {}break;
+		case 'c': {
+			valor += 3;
+			if (p[i + 1] == 'h')
 			{
-				valor = +2;
+				valor += 2;
 				i++;
 			}
-			else
+		} break;
+		case 'd': {}break;
+		case 'e': {}break;
+		case 'f': {}break;
+		case 'g': {}break;
+		case 'h': {}break;
+		case 'i': {}break;
+		case 'j': {}break;
+		case 'l': {
+			valor += 6;
+			if (p[i + 1] == 'L')
 			{
-
+				valor += 2;
+				i++;
 			}
-		}
-			
+		}break;
+		case 'k': {}break;
+		case 'm': {}break;
+		case 'n': {}break;
+		case 'ñ': {}break;
+		case 'o': {}break;
+		case 'p': {}break;
+		case 'q': {}break;
+		case 'r': {
+			valor += 1;
+			if (p[i + 1] == 'r')
+			{
+				valor += 7;
+				i++;
+			}
+		}break;
+		case 's': {}break;
+		case 't': {}break;
+		case 'u': {} break;
+		case 'v': {}break;
+		case 'w': {}break;
+		case 'x': {}break;
+		case 'y': {}break;
+		case 'z': {}break;
+		default: {}
 		}
 	}
 
