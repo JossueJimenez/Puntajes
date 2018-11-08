@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lista.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>

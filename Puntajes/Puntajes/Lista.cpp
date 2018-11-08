@@ -17,23 +17,21 @@ void Lista::agregar(string i)
 	primero = new Nodo(primero, i);
 }
 
-void Lista::leer()
+void Lista::leer(string l)
 {
-	fstream s("palabras.txt", ios::in);
+	fstream s(l + ".txt", ios::in);
 	string n;
 	while (!s.eof())
 	{
-		getline(s, n, '\t');
+		getline(s, n, '/');
 		agregar(n);
 	}
 	s.close();
 }
 
-void Lista::guardar()
+void Lista::guardar(fstream& s)
 {
 	Nodo* aux = primero;
-	fstream s("palabras.txt", ios::out);
-	string n;
 	while (aux)
 	{
 		s << aux->getInf() + '/';
@@ -59,7 +57,7 @@ bool Lista::isWord(string i)
 	Nodo* aux = primero;
 	while (aux)
 	{
-		if (aux->getInf() == i);
+		if (aux->getInf() == i)
 		{
 			return true;
 		}
@@ -75,8 +73,8 @@ int Lista::puntaje(string p)
 	{
 		switch (p[i])
 		{
-		case 'A': {} break;
-		case 'B': {}break;
+		case 'A': {valor += 1; } break;
+		case 'B': {valor += 3; }break;
 		case 'C': {
 			valor += 3;
 			if (p[i + 1] == 'H')
@@ -85,13 +83,13 @@ int Lista::puntaje(string p)
 				i++;
 			}
 		} break;
-		case 'D': {}break;
-		case 'E': {}break;
-		case 'F': {}break;
-		case 'G': {}break;
-		case 'H': {}break;
-		case 'I': {}break;
-		case 'J': {}break;
+		case 'D': {valor += 2; }break;
+		case 'E': {valor += 2; }break;
+		case 'F': {valor += 4; }break;
+		case 'G': {valor += 2; }break;
+		case 'H': {valor += 4; }break;
+		case 'I': {valor += 1; }break;
+		case 'J': {valor += 8; }break;
 		case 'L': {
 			valor += 6;
 			if (p[i + 1] == 'L')
@@ -100,13 +98,13 @@ int Lista::puntaje(string p)
 				i++;
 			}
 		}break;
-		case 'K': {}break;
-		case 'M': {}break;
-		case 'N': {}break;
-		case 'Ñ': {}break;
-		case 'O': {}break;
-		case 'P': {}break;
-		case 'Q': {}break;
+		case 'K': {valor += 5; }break;
+		case 'M': {valor += 3; }break;
+		case 'N': {valor += 2; }break;
+		case 'Ñ': {valor += 8; }break;
+		case 'O': {valor += 1; }break;
+		case 'P': {valor += 3; }break;
+		case 'Q': {valor += 5; }break;
 		case 'R': {
 			valor += 1;
 			if (p[i + 1] == 'R')
@@ -115,16 +113,16 @@ int Lista::puntaje(string p)
 				i++;
 			}
 		}break;
-		case 'S': {}break;
-		case 'T': {}break;
-		case 'U': {} break;
-		case 'V': {}break;
-		case 'W': {}break;
-		case 'X': {}break;
-		case 'Y': {}break;
-		case 'Z': {}break;
-		case 'a': {} break;
-		case 'b': {}break;
+		case 'S': {valor += 1; }break;
+		case 'T': {valor += 1; }break;
+		case 'U': {valor += 1; } break;
+		case 'V': {valor += 4; }break;
+		case 'W': {valor += 8; }break;
+		case 'X': {valor += 8; }break;
+		case 'Y': {valor += 4; }break;
+		case 'Z': {valor += 9; }break;
+		case 'a': {valor += 1; } break;
+		case 'b': {valor += 3; }break;
 		case 'c': {
 			valor += 3;
 			if (p[i + 1] == 'h')
@@ -133,27 +131,27 @@ int Lista::puntaje(string p)
 				i++;
 			}
 		} break;
-		case 'd': {}break;
-		case 'e': {}break;
-		case 'f': {}break;
-		case 'g': {}break;
-		case 'h': {}break;
-		case 'i': {}break;
-		case 'j': {}break;
+		case 'd': {valor += 2; }break;
+		case 'e': {valor += 2; }break;
+		case 'f': {valor += 4; }break;
+		case 'g': {valor += 2; }break;
+		case 'h': {valor += 4; }break;
+		case 'i': {valor += 1; }break;
+		case 'j': {valor += 8; }break;
 		case 'l': {
 			valor += 6;
-			if (p[i + 1] == 'L')
+			if (p[i + 1] == 'l')
 			{
 				valor += 2;
 				i++;
 			}
 		}break;
-		case 'k': {}break;
-		case 'm': {}break;
-		case 'n': {}break;
-		case 'ñ': {}break;
-		case 'o': {}break;
-		case 'p': {}break;
+		case 'k': {valor += 5; }break;
+		case 'm': {valor += 3; }break;
+		case 'n': {valor += 2; }break;
+		case 'ñ': {valor += 8; }break;
+		case 'o': {valor += 1; }break;
+		case 'p': {valor += 3; }break;
 		case 'q': {}break;
 		case 'r': {
 			valor += 1;
@@ -163,17 +161,16 @@ int Lista::puntaje(string p)
 				i++;
 			}
 		}break;
-		case 's': {}break;
-		case 't': {}break;
-		case 'u': {} break;
-		case 'v': {}break;
-		case 'w': {}break;
-		case 'x': {}break;
-		case 'y': {}break;
-		case 'z': {}break;
-		default: {}
+		case 's': {valor += 1; }break;
+		case 't': {valor += 1; }break;
+		case 'u': {valor += 1; }break;
+		case 'v': {valor += 4; }break;
+		case 'w': {valor += 8; }break;
+		case 'x': {valor += 8; }break;
+		case 'y': {valor += 4; }break;
+		case 'z': {valor += 9; }break;
 		}
 	}
 
-	return 0;
+	return valor;
 }

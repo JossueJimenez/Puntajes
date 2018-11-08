@@ -1,5 +1,6 @@
 #pragma once
 #include "Nodo.h"
+#include <fstream>
 
 class Lista
 {
@@ -9,8 +10,8 @@ public:
 	Lista();
 	~Lista();
 	void agregar(string);
-	void leer();
-	void guardar();
+	void leer(string);
+	void guardar(fstream&);
 	string toString();
 	bool isWord(string);
 	int puntaje(string);

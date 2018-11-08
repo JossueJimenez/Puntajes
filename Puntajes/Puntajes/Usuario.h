@@ -8,6 +8,10 @@ private:
 public:
 	Usuario();
 	~Usuario();
-	
+	void agregarPalabra(string);
+	void aumentarPuntaje(int);
+	void guardar(string);
+	void leer(string);
+	int getPuntaje();
 };
 
